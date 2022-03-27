@@ -1,0 +1,220 @@
+.header {
+  position: absolute;
+  padding: 30px 0px;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 50;
+  background-color: $bgPromoColor;
+
+  &._header-scroll {
+    position: fixed;
+    top: -200%;
+    background-color: rgba(247, 247, 247, .8);
+  }
+
+  &._header-show {
+    transition: top 0.3s ease 0s;
+    top: 0;
+  }
+
+  /* .header__container */
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* .header__logo */
+  &__logo {
+    flex: 0 1 17.52%;
+    position: relative;
+    pointer-events: none;
+    z-index: 11;
+  }
+
+  /* .header__menu */
+  &__menu {
+    // flex: 1 1 auto;
+    // padding: 0px 0px 0px rem(20);
+  }
+
+  /* .header__toolbar */
+  &__toolbar {
+    flex: 0 1 17.52%;
+    display: flex;
+    align-items: center;
+  }
+
+  /* .header__button */
+  &__button {}
+}
+
+.menu {
+  text-align: center;
+
+  @media (max-width: $mobile) {
+    position: fixed;
+    padding: rem(70) 0px rem(30) 0px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    overflow: auto;
+    background-color: #fff;
+    transition: left 0.3s ease 0s;
+
+    z-index: 10;
+
+    &::before {
+      position: fixed;
+      content: '';
+      left: -100%;
+      top: 0;
+      width: 100%;
+      height: rem(70);
+      background-color: #fff;
+      z-index: 10;
+
+      transition: left 0.3s ease 0s;
+    }
+
+    .menu-open & {
+      left: 0;
+
+      &::before {
+        left: 0;
+      }
+    }
+  }
+
+  /* .menu__body */
+  &__body {}
+
+  /* .menu__list */
+  &__list {
+    @media (min-width:$mobile) {
+      display: flex;
+      align-items: center;
+      margin: 0;
+    }
+  }
+
+  /* .menu__item */
+  &__item~&__item {
+    @media (min-width:$mobile) {
+      margin: 0px 0 0 rem(30);
+    }
+  }
+
+  /* .menu__link */
+  &__link {
+    position: relative;
+
+    font-size: rem(14);
+    line-height: 100%;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .3px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -1px;
+      left: -1px;
+
+      background-color: $mainColor;
+      transition: width 0.5s ease 0s;
+    }
+
+    @media (min-width:$mobile) {
+      // transition: color 0.3s ease 0s;
+    }
+
+
+    @media (any-hover: hover) {
+      &:hover {
+
+        &::after {
+          width: 100%;
+        }
+
+
+      }
+    }
+  }
+}
+
+//====================================================================================================
+
+//Burger
+
+.icon-menu {
+  display: none;
+
+  @media (max-width: $mobile) {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+    z-index: 999;
+
+    span,
+    &::before,
+    &::after {
+      content: "";
+      transition: all 0.3s ease 0s;
+      left: 0px;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: $mainColor;
+    }
+
+    &::before {
+      top: 0px;
+    }
+
+    &::after {
+      bottom: 0px;
+    }
+
+    span {
+      top: calc(50% - 1px);
+    }
+
+    .menu-open & {
+      span {
+        transform: scale(0);
+      }
+
+      &::before {
+        transform: rotate(-45deg);
+        top: calc(50% - 1px);
+      }
+
+      &::after {
+        transform: rotate(45deg);
+        bottom: calc(50% - 1px);
+      }
+    }
+  }
+}
+
+.toolbar {
+
+  /* .toolbar__lang */
+  &__lang {}
+}
+
+.lang {
+
+  /* .lang__item */
+  &__item {}
+
+  /* .lang__link */
+  &__link {}
+}

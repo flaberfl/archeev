@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<section class="page__intro intro">
+				<div class="intro__container">
+					<h1 class="intro__title">Architecture that recognizes all your sensibilities</h1>
+					<p class="intro__desc">Welcome to Archee, a reliable business partner on your path to building a better
+						looking future for all.</p>
+					<a href=#!" class="intro__button button">Make An Enquiry</a>
+
+					<div class="intro__footer">
+						<div class="intro__rating rating">
+							<h2 class="rating__title">Ratings <span class="rating__grade">5.0</span></h2>
+							<p class="rating__desc">Trusted by Clients From Worldwide</p>
+							<ul class="rating-list">
+								<li class="rating-list__item"><img src="" alt="" class="rating-list__object"></li>
+								<li class="rating-list__item"><img src="" alt="" class="rating-list__object"></li>
+								<li class="rating-list__item"><img src="" alt="" class="rating-list__object"></li>
+								<li class="rating-list__item"><img src="" alt="" class="rating-list__object"></li>
+								<li class="rating-list__item"><img src="" alt="" class="rating-list__object"></li>
+							</ul>
+						
+						</div>
+						<div class="intro__contact"></div>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>
