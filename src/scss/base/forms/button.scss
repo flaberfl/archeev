@@ -8,17 +8,14 @@
 	font-size: rem(16);
 	color: #fff;
 	font-weight: 700;
-	line-height: math.div(19.84 , 16);
+	line-height: math.div(19.84, 16);
 	border-radius: rem(6);
 	background-color: $redColor;
 	transition: background-color 0.3s ease 0s;
 
 	@media (any-hover: hover) {
 		&:hover {
-			background-color:#d6680fb3;
+			background-color: #d6680fb3;
 		}
-	}
-	&._fw {
-		width: 100%;
 	}
 }
