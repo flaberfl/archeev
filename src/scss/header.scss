@@ -28,10 +28,8 @@
   /* .header__logo */
   &__logo {
     flex: 0 1 17.192%;
-    // flex: 0 1 200px;
     position: relative;
     z-index: 11;
-    // pointer-events: none;
   }
 
   /* .header__menu */
@@ -43,7 +41,6 @@
   /* .header__toolbar */
   &__toolbar {
     flex: 0 1 17.192%;
-    // flex: 0 1 200px;
     display: flex;
     align-items: center;
   }
@@ -225,7 +222,18 @@
         background: url('../img/arrow.svg') 0 0 no-repeat;
       }
     }
+
+    &:hover &__item {
+      display: flex;
+
+      &::after {
+        transform: rotate(180deg);
+
+      }
+    }
+
   }
+
 
   /* .lang__link */
   &__link {
