@@ -223,17 +223,17 @@
       }
     }
 
-    &:hover &__item {
-      display: flex;
-
-      &::after {
-        transform: rotate(180deg);
-
-      }
-    }
 
   }
 
+  &:hover &__item {
+    display: flex;
+
+    &::after {
+      transform: rotate(180deg);
+
+    }
+  }
 
   /* .lang__link */
   &__link {
