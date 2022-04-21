@@ -33,21 +33,19 @@
   }
 
   /* .header__menu */
-  &__menu {
-    // flex: 1 1 auto;
-    // padding: 0px 0px 0px rem(20);
-  }
+  &__menu {}
 
   /* .header__toolbar */
   &__toolbar {
     flex: 0 1 17.192%;
+    position: relative;
     display: flex;
-    align-items: center;
+    justify-content: flex-end;
   }
 
   /* .header__button */
   &__button {
-    margin: 0px 0px 0px rem(29);
+    // margin: 0px 0px 0px rem(29);
   }
 }
 
@@ -200,7 +198,11 @@
 .toolbar {
 
   /* .toolbar__lang */
-  &__lang {}
+  &__lang {
+    position: absolute;
+    left: 0;
+    top: rem(13);
+  }
 }
 
 .lang {
@@ -213,17 +215,19 @@
       display: flex;
       align-items: center;
 
+
       &::after {
-        margin-left: 9px;
-        content: '';
         display: block;
+        content: '';
+        margin-left: 9px;
         width: 12px;
         height: 7px;
         background: url('../img/arrow.svg') 0 0 no-repeat;
+        cursor: pointer;
+
+        transition: all 0.3s ease 0s;
       }
     }
-
-
   }
 
   &:hover &__item {
@@ -231,7 +235,6 @@
 
     &::after {
       transform: rotate(180deg);
-
     }
   }
 

@@ -1,3 +1,104 @@
-//====================================================================================================
+//========INTRO============================================================================================
+.page {
+
+  /* .page__intro */
+  &__intro {}
+}
+
+.intro {
+  padding: rem(209) 0 rem(175);
+  background: $bgPromoColor;
+
+  /* .intro__container */
+  &__container {}
+
+  /* .intro__title */
+  &__title {
+    max-width: rem(540);
+
+    &:not(:last-child) {
+      margin: 0px 0px rem(20) 0px;
+    }
+
+    font-size: rem(62);
+    font-weight: 900;
+    line-height: math.div(76.88, 62);
+  }
+
+  /* .intro__desc */
+  &__desc {
+    max-width: rem(455);
+
+    &:not(:last-child) {
+      margin: 0px 0px rem(34) 0px;
+    }
+
+    @extend %base-text;
+    font-size: rem(18);
+    line-height: math.div(30, 18);
+  }
+
+  /* .intro__button */
+  &__button {
+    padding: rem(20) rem(40);
+    &:not(:last-child) {
+      margin: 0px 0px rem(101) 0px;
+    }
+  }
+
+  /* .intro__footer */
+  &__footer {}
+
+  /* .intro__rating */
+  &__rating {}
+
+  /* .intro__contact */
+  &__contact {}
+}
+
+.rating {
+
+  /* .rating__title */
+  &__title {
+    &:not(:last-child) {
+      margin: 0px 0px rem(8) 0px;
+    }
+
+    font-size: 20px;
+    line-height: math.div(22 , 20);
+    letter-spacing: 1;
+  }
+
+  /* .rating__grade */
+  &__grade {}
+
+  /* .rating__desc */
+  &__desc {
+    @extend %base-text;
+    letter-spacing: .3px;
+  }
+
+  /* .rating__list */
+  &__list {}
+
+  /* .rating__item */
+  &__item {}
+
+  /* .rating__icon */
+  &__icon {
+
+    /* .rating__icon_more */
+    &_more {}
+  }
+}
+
+.contact {
+
+  /* .contact__phone */
+  &__phone {}
+
+  /* .contact__desc */
+  &__desc {}
+}
 
 //====================================================================================================
