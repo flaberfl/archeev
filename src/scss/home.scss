@@ -10,7 +10,32 @@
   background: $bgPromoColor;
 
   /* .intro__container */
-  &__container {}
+  &__container {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: url('@img/intro/star-bg.svg');
+      top: -124px;
+      left: -108px;
+      z-index: 5;
+    }
+  }
+
+  &__content {
+    position: relative;
+    margin: 0px 0px rem(101) 0px;
+
+    z-index: 10;
+  }
+
+  &__image {
+    position: absolute;
+    right: -135px;
+    top: -1px;
+    z-index: 2;
+    // max-width: 100%;
+  }
 
   /* .intro__title */
   &__title {
@@ -41,16 +66,18 @@
   /* .intro__button */
   &__button {
     padding: rem(20) rem(40);
-    &:not(:last-child) {
-      margin: 0px 0px rem(101) 0px;
-    }
   }
 
   /* .intro__footer */
-  &__footer {}
+  &__footer {
+    display: flex;
+    align-items: flex-end;
+  }
 
   /* .intro__rating */
-  &__rating {}
+  &__rating {
+    flex: 1 1 auto;
+  }
 
   /* .intro__contact */
   &__contact {}
@@ -65,40 +92,88 @@
     }
 
     font-size: 20px;
-    line-height: math.div(22 , 20);
+    font-weight: 700;
+    line-height: math.div(22, 20);
     letter-spacing: 1;
+    letter-spacing: .3px;
   }
 
   /* .rating__grade */
-  &__grade {}
+  &__grade {
+    &::before {
+      content: url('@img/rating/star.svg');
+      width: rem(16);
+      height: rem(16);
+      margin: 0 rem(5);
+    }
+  }
 
   /* .rating__desc */
   &__desc {
+    &:not(:last-child) {
+      margin: 0px 0px rem(22) 0px;
+    }
+
     @extend %base-text;
     letter-spacing: .3px;
   }
 
   /* .rating__list */
-  &__list {}
+  &__list {
+    display: flex;
+  }
 
   /* .rating__item */
-  &__item {}
+  &__item {
+    &~& {
+      margin: 0px 0px 0px rem(-10);
+    }
+  }
 
   /* .rating__icon */
   &__icon {
+    width: rem(48);
+    height: rem(48);
+
+    border-radius: 50%;
+    border: 2px solid #fff;
 
     /* .rating__icon_more */
-    &_more {}
+    &_more {
+      background-color: #D6680F;
+      color: #fff;
+
+      font-size: rem(16);
+      font-weight: 700;
+      line-height: math.div(16, 16);
+      text-align: center;
+    }
   }
 }
 
 .contact {
 
   /* .contact__phone */
-  &__phone {}
+  &__phone {
+    display: block;
+    margin: 0px 0px rem(10) 0px;
+
+    font-size: rem(16);
+    font-weight: 700;
+    line-height: math.div(19.64, 16);
+    text-decoration: underline;
+    color: $redColor;
+  }
 
   /* .contact__desc */
-  &__desc {}
+  &__desc {
+    max-width: rem(250);
+
+    @extend %base-text;
+    font-size: rem(12);
+    font-weight: 500;
+    line-height: math.div(17.64, 12);
+  }
 }
 
 //====================================================================================================
