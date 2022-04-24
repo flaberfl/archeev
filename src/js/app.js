@@ -144,7 +144,7 @@ import * as flsForms from "./files/forms/forms.js";
 import * as flsScroll from "./files/scroll/scroll.js";
 
 // Плавная навигация по странице
-// flsScroll.pageNavigation();
+flsScroll.pageNavigation();
 
 // Функционал добавления классов к хедеру при прокрутке
 flsScroll.headerScroll();
@@ -167,7 +167,7 @@ flsScroll.headerScroll();
 // ========================================================================================================================================================================================================================================================
 
 /* Динамический адаптив */
-// import "./libs/dynamic_adapt.js";
+import "./libs/dynamic_adapt.js";
 
 /* Форматирование чисел */
 // import './libs/wNumb.min.js';

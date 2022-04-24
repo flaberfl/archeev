@@ -1,16 +1,20 @@
 .header {
   position: absolute;
-  padding: 30px 0px;
+  padding: rem(30) 0px;
   width: 100%;
   left: 0;
   top: 0;
   z-index: 50;
   background-color: $bgPromoColor;
 
+  @media (max-width:$tablet) {
+    padding: rem(15) 0;
+  }
+
   &._header-scroll {
     position: fixed;
     top: -200%;
-    background-color: rgba(247, 247, 247, .8);
+    background-color: rgba(247, 247, 247, .9);
   }
 
   &._header-show {
@@ -37,16 +41,20 @@
 
   /* .header__toolbar */
   &__toolbar {
-    flex: 0 1 17.192%;
+    flex: 0 1 196px;
     position: relative;
     display: flex;
     justify-content: flex-end;
+    z-index: 11;
+
+    @media (max-width:$mobileSmall) {
+      margin: rem(30) 0px 0px 0px;
+      justify-content: center;
+    }
   }
 
   /* .header__button */
-  &__button {
-    // margin: 0px 0px 0px rem(29);
-  }
+  &__button {}
 }
 
 .menu {
@@ -88,7 +96,11 @@
   }
 
   /* .menu__body */
-  &__body {}
+  &__body {
+    @media (max-width:$mobile) {
+      padding: rem(40) 0;
+    }
+  }
 
   /* .menu__list */
   &__list {
@@ -100,6 +112,14 @@
   }
 
   /* .menu__item */
+  &__item {
+    @media (max-width:$mobile) {
+      &:not(:last-child) {
+        margin: 0px 0px rem(30) 0px;
+      }
+    }
+  }
+
   &__item~&__item {
     @media (min-width:$mobile) {
       margin: 0 0 0 rem(30);
@@ -134,6 +154,10 @@
           width: 100%;
         }
       }
+    }
+
+    @media (max-width:$mobile) {
+      font-size: rem(24);
     }
   }
 }
@@ -198,14 +222,18 @@
 .toolbar {
 
   /* .toolbar__lang */
-  &__lang {
-    position: absolute;
-    left: 0;
-    top: rem(13);
-  }
+  &__lang {}
+
 }
 
 .lang {
+  position: absolute;
+  left: 0;
+  top: rem(13);
+
+  @media (max-width:$mobileSmall) {
+    @include adaptiveValue("left", 80, 28, 479.98, 320, 2);
+  }
 
   /* .lang__item */
   &__item {
@@ -245,5 +273,9 @@
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: .3px;
+
+    @media (max-width:$mobileSmall) {
+      font-size: rem(18);
+    }
   }
 }
