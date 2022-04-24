@@ -205,3 +205,51 @@
 }
 
 //====================================================================================================
+
+
+//==========SEARCH========================================================================================
+
+.search {
+  margin: -150px 0px 0px 0px;
+
+  /* .search__container */
+  &__container {}
+
+  /* .search__body */
+  &__body {
+    padding: 50px;
+
+    background: #fff;
+    box-shadow: 30px 50px 150px rgba(39, 31, 26, 0.2);
+    border-radius: 10px;
+  }
+
+  /* .search__title */
+  &__title {
+    font-size: rem(24);
+    font-weight: 700;
+    line-height: math.div(29.76, 24);
+  }
+}
+
+.search-form {
+
+  /* .search-form__input */
+  &__input {
+    padding: 18px 20px;
+
+    background-color: #F5F5F5;
+    border-radius: 6px;
+
+    &::placeholder {
+      @extend %base-text;
+      color: rgba(97, 89, 77, 0.6);
+
+    }
+  }
+
+  /* .search-form__button */
+  &__button {}
+}
+
+.button {}
