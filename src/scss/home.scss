@@ -10,6 +10,7 @@
   background: $bgPromoColor;
 
   @include adaptiveValue("padding-top", 209, 100);
+  @include adaptiveValue("padding-bottom", 175, 120);
 
   /* .intro__container */
   &__container {
@@ -29,6 +30,10 @@
     z-index: 10;
 
     @include adaptiveValue("padding-bottom", 101, 30);
+
+    @media (max-width: em(580)) {
+      text-align: center;
+    }
   }
 
   &__image {
@@ -66,6 +71,11 @@
 
     &:not(:last-child) {
       margin: 0px 0px rem(34) 0px;
+
+    }
+
+    @media (max-width: em(580)) {
+      max-width: none;
     }
 
     @extend %base-text;
@@ -210,46 +220,81 @@
 //==========SEARCH========================================================================================
 
 .search {
-  margin: -150px 0px 0px 0px;
+  margin: rem(-105) 0px 0px 0px;
 
   /* .search__container */
   &__container {}
 
   /* .search__body */
   &__body {
-    padding: 50px;
+    padding: rem(50);
 
     background: #fff;
     box-shadow: 30px 50px 150px rgba(39, 31, 26, 0.2);
-    border-radius: 10px;
+    border-radius: rem(10);
+
+    @media (max-width:$mobile) {
+      padding: rem(25);
+      margin-left: rem(-15);
+      margin-right: rem(-15);
+    }
   }
 
   /* .search__title */
   &__title {
+    margin: 0px 0px rem(20) 0px;
+
     font-size: rem(24);
     font-weight: 700;
     line-height: math.div(29.76, 24);
+
+    @media (max-width: em(580)) {
+      text-align: center;
+    }
   }
 }
 
 .search-form {
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: em(1110)) {
+    flex-wrap: wrap;
+  }
 
   /* .search-form__input */
   &__input {
-    padding: 18px 20px;
+    margin: 0px rem(20) 0px 0px;
+    padding: 20.5px 62px 20.5px 20px;
+    flex: 1 1 auto;
 
     background-color: #F5F5F5;
     border-radius: 6px;
 
     &::placeholder {
       @extend %base-text;
+      font-weight: 500;
+      line-height: math.div(23.52, 16);
       color: rgba(97, 89, 77, 0.6);
 
     }
+
+    @media (max-width: em(1110)) {
+      margin-bottom: rem(30)
+    }
+
+    @media (max-width:$tablet) {
+      flex: 1 1 100%;
+    }
+
+    @media (max-width:$mobile) {
+      margin-bottom: rem(20)
+    }
+
   }
 
   /* .search-form__button */
-  &__button {}
+  &__button {
+    padding: rem(20) rem(40);
+  }
 }
-
-.button {}
