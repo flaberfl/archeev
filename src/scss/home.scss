@@ -190,6 +190,7 @@
 }
 
 .contact {
+  max-width: rem(250);
 
   /* .contact__phone */
   &__phone {
@@ -205,8 +206,6 @@
 
   /* .contact__desc */
   &__desc {
-    max-width: rem(250);
-
     @extend %base-text;
     font-size: rem(12);
     font-weight: 500;
@@ -268,6 +267,9 @@
     padding: 20.5px 62px 20.5px 20px;
     flex: 1 1 auto;
 
+    background-repeat: no-repeat;
+    background-position: center right 20px;
+
     background-color: #F5F5F5;
     border-radius: 6px;
 
@@ -277,6 +279,22 @@
       line-height: math.div(23.52, 16);
       color: rgba(97, 89, 77, 0.6);
 
+    }
+
+    &_location {
+      background-image: url('@img/search/location.svg');
+    }
+
+    &_type {
+      background-image: url('@img/search/type.svg');
+    }
+
+    &_budget {
+      // padding-right: 6px;
+
+      // box-sizing: content-box;
+
+      background-image: url('@img/search/dollar.svg');
     }
 
     @media (max-width: em(1110)) {
@@ -290,7 +308,6 @@
     @media (max-width:$mobile) {
       margin-bottom: rem(20)
     }
-
   }
 
   /* .search-form__button */
