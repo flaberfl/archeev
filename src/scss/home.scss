@@ -1,9 +1,4 @@
 //========INTRO============================================================================================
-.page {
-
-  /* .page__intro */
-  &__intro {}
-}
 
 .intro {
   padding: rem(209) 0 rem(175);
@@ -81,11 +76,6 @@
     @extend %base-text;
     font-size: rem(18);
     line-height: math.div(30, 18);
-  }
-
-  /* .intro__button */
-  &__button {
-    padding: rem(20) rem(40);
   }
 
   /* .intro__footer */
@@ -213,16 +203,11 @@
   }
 }
 
-//====================================================================================================
-
 
 //==========SEARCH========================================================================================
 
 .search {
   margin: rem(-105) 0px 0px 0px;
-
-  /* .search__container */
-  &__container {}
 
   /* .search__body */
   &__body {
@@ -263,12 +248,12 @@
 
   /* .search-form__input */
   &__input {
-    margin: 0px rem(20) 0px 0px;
-    padding: 20.5px 62px 20.5px 20px;
+    margin: 0 rem(20) 0 0;
+    padding: rem(20.5) rem(62) rem(20.5) rem(20);
     flex: 1 1 auto;
 
     background-repeat: no-repeat;
-    background-position: center right 20px;
+    background-position: center right rem(20);
 
     background-color: #F5F5F5;
     border-radius: 6px;
@@ -278,7 +263,6 @@
       font-weight: 500;
       line-height: math.div(23.52, 16);
       color: rgba(97, 89, 77, 0.6);
-
     }
 
     &_location {
@@ -305,11 +289,6 @@
       margin-bottom: rem(20)
     }
   }
-
-  /* .search-form__button */
-  &__button {
-    padding: rem(20) rem(40);
-  }
 }
 
 //==========SERVICES========================================================================================
@@ -317,12 +296,6 @@
 .services {
   @include adaptiveValue("padding-top", 120, 40);
   @include adaptiveValue("padding-bottom", 120, 40);
-
-  /* .services__container */
-  &__container {}
-
-  /* .services__body */
-  &__body {}
 
   /* .services__list */
   &__list {
@@ -333,42 +306,38 @@
     @media (max-width:$tablet) {
       justify-content: center;
     }
-
   }
 
   /* .services__item */
   &__item {
-    flex: 0 1 25.52%;
+    flex: 0 1 rem(291);
     display: flex;
     flex-direction: column;
     align-items: start;
 
-
-
     @media (max-width:$tablet) {
-
-      flex: 0 1 50%;
+      flex: 0 1 100%;
+      align-items: center;
 
       &:not(:last-child) {
-        margin: 0px 0px 40px 0px;
+        margin: 0px 0px rem(40) 0px;
       }
-
-      &:last-child {}
     }
-
-
   }
 
   &__icon {
-    flex: 0 0 50px;
-    margin: 0px 0px 30px 0px;
-  }
+    flex: 0 0 rem(50);
+    margin: 0px 0px rem(30) 0px;
 
+    @media (max-width:$tablet) {
+      margin: 0px 0px rem(20) 0px;
+    }
+  }
 
   /* .services__title */
   &__title {
     &:not(:last-child) {
-      margin: 0px 0px 10px 0px;
+      margin: 0px 0px rem(10) 0px;
     }
 
     font-size: rem(32);
@@ -377,12 +346,16 @@
 
   /* .services__text */
   &__text {
-    margin: 0px 0px 30px 0px;
+    margin: 0px 0px rem(30) 0px;
     flex: 1 1 auto;
 
     @extend %base-text;
     font-size: 16px;
     line-height: math.div(28, 16);
+
+    @media (max-width:$tablet) {
+      margin: 0px 0px rem(20) 0px;
+    }
   }
 
   /* .services__link */
@@ -399,5 +372,188 @@
         color: $redColor;
       }
     }
+  }
+}
+
+//==========ABOUT========================================================================================
+
+.about {
+  padding: rem(76) 0px;
+
+  background-color: #FDFBF6;
+
+  @media (max-width:$mobile) {
+    padding: rem(46) 0px;
+  }
+
+  /* .about__container */
+  &__container {
+    display: flex;
+    align-items: center;
+
+    @media (max-width:$mobile) {
+      flex-direction: column-reverse;
+      align-items: stretch;
+    }
+  }
+
+  /* .about__image-ibg */
+  &__image-ibg {
+    margin: 0px 0px 0px rem(-63);
+
+    flex: 0 0 55.3%;
+    padding: 0px 0px 46.3% 0px;
+
+    mix-blend-mode: darken;
+
+
+    @media (max-width: em(1300)) {
+      margin: 0;
+    }
+
+    @media (max-width:$mobile) {
+      width: 58%;
+      align-self: center;
+    }
+
+    @media (max-width:$mobileSmall) {
+      display: none;
+    }
+  }
+
+  /* .about__content */
+  &__content {
+    padding: 0px 0px 0px rem(153);
+
+    @media (max-width: em(1300)) {
+      padding: 0px 0px 0px rem(40);
+    }
+
+    @media (max-width:$mobile) {
+      padding: 0;
+      margin: 0px 0px rem(40) 0px;
+
+      text-align: center;
+    }
+
+    @media (max-width:$mobileSmall) {
+      margin: 0;
+    }
+  }
+
+  /* .about__title */
+  &__title {
+    font-size: rem(48);
+    line-height: math.div(59.52, 48);
+
+    @include adaptiveValue("font-size", 48, 30);
+
+    &:not(:last-child) {
+      margin: 0px 0px rem(20) 0px;
+    }
+
+    @media (max-width:$tablet) {
+      &:not(:last-child) {
+        margin: 0px 0px rem(10) 0px;
+      }
+    }
+  }
+
+  /* .about__text */
+  &__text {
+    @extend %base-text;
+    font-size: rem(16);
+    line-height: math.div(28, 16);
+
+    @include adaptiveValue("font-size", 16, 14);
+
+    &:not(:last-child) {
+      margin: 0px 0px rem(40) 0px;
+    }
+
+    @media (max-width:$tablet) {
+      &:not(:last-child) {
+        margin: 0px 0px rem(20) 0px;
+      }
+    }
+  }
+}
+
+//==========PORTFOLIO========================================================================================
+
+.portfolio {
+  padding: 120px 0px;
+
+  /* .portfolio__container */
+  &__container {}
+
+  /* .portfolio__title */
+  &__title {
+    margin: 0px 0px 50px 0px;
+
+    font-size: rem(48);
+    line-height: math.div(59.52, 48);
+
+    @include adaptiveValue("font-size", 48, 30);
+  }
+
+  /* .portfolio__list */
+  &__list {}
+}
+
+.portfolio {
+
+  /* .portfolio__item */
+  &__item {
+    &:not(:last-child) {
+      margin: 0px 0px 150px 0px;
+    }
+  }
+}
+
+.item-portfolio {
+  display: flex;
+  align-items: end;
+  // align-items: stretch;
+
+  /* .item-porftolio__desc */
+  &__desc {
+    padding: 20px 0px 0px 0px;
+    position: relative;
+    flex: 0 1 330px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 1px;
+      left: 0;
+      top: 0;
+      background-color: $textColor;
+    }
+  }
+
+  /* .item-portfolio__title */
+  &__title {
+    &:not(:last-child) {
+      margin: 0px 0px 10px 0px;
+    }
+
+    font-size: rem(32);
+    line-height: math.div(39.68, 32);
+  }
+
+  /* .item-portfolio__text */
+  &__text {
+    @extend %base-text;
+    font-size: rem(16);
+    line-height: math.div(28, 16);
+  }
+
+  /* .item-portfolio__image-ibg */
+  &__image-ibg {
+    flex: 0 0 59.68%;;
+    padding-bottom: 59.68%;
+    padding-bottom: percent(500, 770);
   }
 }
