@@ -75,8 +75,8 @@ function initSliders() {
 			//},
 			// Arrows
 			navigation: {
-				nextEl: '.about__more .more__item_next',
-				prevEl: '.about__more .more__item_prev',
+				nextEl: '.slider-team .slider-arrow_prev',
+				prevEl: '.slider-team .slider-arrow_next',
 			},
 			/*
 			breakpoints: {
