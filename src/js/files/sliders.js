@@ -59,14 +59,17 @@ function initSliders() {
 			*/
 			observer: true,
 			observeParents: true,
-			slidesPerView: 1,
-			spaceBetween: 0,
-			autoHeight: true,
+			slidesPerView: 2,
+			spaceBetween: 30,
+			loopAdditionalSlides: 5,
+			// autoHeight: false,
 			speed: 800,
+			watchOverflow: true,
 			//touchRatio: 0,
 			//simulateTouch: false,
-			//loop: true,
-			//preloadImages: false,
+			loop: true,
+			// preloadImages: false,
+			// parallax: true,
 			//lazy: true,
 			// Dotts
 			//pagination: {
@@ -75,8 +78,8 @@ function initSliders() {
 			//},
 			// Arrows
 			navigation: {
-				nextEl: '.slider-team .slider-arrow_prev',
-				prevEl: '.slider-team .slider-arrow_next',
+				nextEl: '.team__container .slider-arrow_prev',
+				prevEl: '.team__container .slider-arrow_next',
 			},
 			/*
 			breakpoints: {
