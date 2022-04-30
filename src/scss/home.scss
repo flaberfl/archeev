@@ -618,6 +618,7 @@
   &__body {
     position: relative;
     flex: 0 0 399 / 1140 * 100%;
+  @include adaptiveValue("padding-right", 100, 30);
 
     z-index:  5;
   }
@@ -643,13 +644,13 @@
   /* .slider-team__slide */
   &__slide {
     position: relative;
-    // width: 350px;
+    width: 350px;
     overflow: hidden;
   }
 
   /* .slider-team__image-ibg */
   &__image-ibg {
-    padding: 0px 0px 60% 0px;
+    padding: 0px 0px 30.70% 0px;
   }
 
   /* .slider-team__content */
