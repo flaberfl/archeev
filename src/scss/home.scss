@@ -597,11 +597,6 @@
 
 //==========TEAM========================================================================================
 
-.tem {
-
-  background: linear-gradient(1.46deg, rgba(44, 35, 33, 0.9) -2.39%, rgba(44, 35, 33, 0) 34.73%, rgba(44, 35, 33, 0) 49.63%);
-}
-
 .team {
   @include adaptiveValue("padding-top", 120, 40);
   @include adaptiveValue("padding-bottom", 120, 40);
@@ -620,7 +615,8 @@
   /* .team__body */
   &__body {
     position: relative;
-    flex: 0 0 399 / 1140 * 100%;
+    // flex: 0 0 399 / 1140 * 100%;
+    flex: 0 0 35.6%;
     @include adaptiveValue("padding-right", 100, 30);
 
     z-index: 5;
@@ -632,11 +628,10 @@
       left: 0;
       height: 100%;
       width: 200%;
+
       background-color: $mainColor;
 
-      transform: translate(-50%, 0px);
-
-      // z-index: 2;
+      transform: translate(-52%, 0px);
     }
   }
 
@@ -644,8 +639,13 @@
   &__title {
     position: relative;
     align-self: start;
-    // z-index: 4;
+    margin: 0px 0px 35px 0px;
+
     color: #fff;
+
+    @media (max-width:$tablet){
+      text-align: center;
+    }
   }
 
   /* .team__slider */
@@ -659,20 +659,11 @@
 
 .slider-team {
   overflow: visible !important;
-
-  /* .slider-team__swiper */
-  &__swiper {}
-
-  /* .slider-team__slide */
-  &__slide {}
-
 }
 
 .slide-team {
-  width: 350px;
-  // height: 80%;
+  max-width: 350px;
   position: relative;
-  // overflow: hidden;
 
   &::before {
     content: '';
@@ -682,18 +673,16 @@
     width: 100%;
     left: 0;
     top: 0;
+    z-index: 3;
   }
 
   /* .slider-team__image-ibg */
-  &__image-ib {
-    min-height: 440px;
-
-    // padding: 0px 0px 124.1% 0px;
-    img {
-      // width: 100%;
-      // height: 100%;
-      // object-fit: cover;
+  &__image-ibg {
+    @media (min-width:$tablet) {
+      min-height: 440px;
     }
+
+    padding: 0px 0px 124.1% 0px;
   }
 
   /* .slider-team__content */
@@ -702,6 +691,7 @@
 
     @include adaptiveValue("left", 30, 15);
     @include adaptiveValue("bottom", 22, 10);
+    z-index: 5;
   }
 
   /* .slider-team__name */
@@ -723,16 +713,27 @@
 
 .slider-arrows {
   position: absolute;
+  z-index: 10;
   left: 15px;
   bottom: -6px;
-  z-index: 10;
+  
+  
+  
+  @media (max-width:$tablet){
+
+    bottom: -50px;
+    left: 50%;
+    transform: translate(-50%,0px);
+    
+  }
 }
 
 .slider-arrow {
-  
 
   /* .slider-arrow_prev */
-  &_prev {}
+  &_prev {
+    margin: 0px rem(7) 0px 0px;
+  }
 
   /* .slider-arrow_next */
   &_next {}
