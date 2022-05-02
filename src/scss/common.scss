@@ -18,3 +18,22 @@
 
   @include adaptiveValue("font-size", 48, 30);
 }
+
+._section {
+  @include adaptiveValue("padding-top", 120, 40);
+  @include adaptiveValue("padding-bottom", 120, 40);
+}
+
+%decore-line {
+  content: '';
+  position: absolute;
+  width: 90.91%;
+  height: 1px;
+  left: 0;
+  top: 0;
+  background-color: $textColor;
+
+  @media (max-width:$tablet) {
+    width: 100%;
+  }
+}

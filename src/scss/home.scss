@@ -294,8 +294,6 @@
 //==========SERVICES========================================================================================
 
 .services {
-  @include adaptiveValue("padding-top", 120, 40);
-  @include adaptiveValue("padding-bottom", 120, 40);
 
   /* .services__list */
   &__list {
@@ -478,8 +476,6 @@
 //==========PORTFOLIO========================================================================================
 
 .portfolio {
-  @include adaptiveValue("padding-top", 120, 40);
-  @include adaptiveValue("padding-bottom", 120, 40);
 
   /* .portfolio__title */
   &__title {
@@ -518,23 +514,13 @@
 
   /* .item-porftolio__desc */
   &__desc {
-    padding: rem(20) 0px 0px 0px;
+    padding: rem(21) 0px 0px 0px;
     position: relative;
     flex: 0 1 rem(330);
     margin: 0px rem(10) 0px 0px;
 
     &::before {
-      content: '';
-      position: absolute;
-      width: 90.90%;
-      height: 1px;
-      left: 0;
-      top: 0;
-      background-color: $textColor;
-
-      @media (max-width:$tablet) {
-        width: 100%;
-      }
+      @extend %decore-line;
     }
 
     @media (max-width:$tablet) {
@@ -598,9 +584,6 @@
 //==========TEAM========================================================================================
 
 .team {
-  @include adaptiveValue("padding-top", 120, 40);
-  @include adaptiveValue("padding-bottom", 120, 40);
-
   background-color: $mainColor;
 
   /* .team__container */
@@ -615,7 +598,6 @@
   /* .team__body */
   &__body {
     position: relative;
-    // flex: 0 0 399 / 1140 * 100%;
     flex: 0 0 35.6%;
     @include adaptiveValue("padding-right", 100, 30);
 
@@ -624,9 +606,9 @@
     &::before {
       position: absolute;
       content: '';
-      top: 0;
+      top: -1px;
       left: 0;
-      height: 100%;
+      height: 101%;
       width: 200%;
 
       background-color: $mainColor;
@@ -639,11 +621,11 @@
   &__title {
     position: relative;
     align-self: start;
-    margin: 0px 0px 35px 0px;
+    margin: 0px 0px rem(35) 0px;
 
     color: #fff;
 
-    @media (max-width:$tablet){
+    @media (max-width:$mobileSmall) {
       text-align: center;
     }
   }
@@ -656,20 +638,21 @@
   }
 }
 
-
 .slider-team {
   overflow: visible !important;
 }
 
 .slide-team {
-  max-width: 350px;
+  max-width: rem(350);
   position: relative;
+  border-radius: rem(8);
+  overflow: hidden;
 
   &::before {
     content: '';
     position: absolute;
     background: linear-gradient(1.46deg, rgba(44, 35, 33, 0.9) -2.39%, rgba(44, 35, 33, 0) 34.73%, rgba(44, 35, 33, 0) 49.63%);
-    height: 100%;
+    height: 101%;
     width: 100%;
     left: 0;
     top: 0;
@@ -679,7 +662,7 @@
   /* .slider-team__image-ibg */
   &__image-ibg {
     @media (min-width:$tablet) {
-      min-height: 440px;
+      min-height: rem(440);
     }
 
     padding: 0px 0px 124.1% 0px;
@@ -690,13 +673,13 @@
     position: absolute;
 
     @include adaptiveValue("left", 30, 15);
-    @include adaptiveValue("bottom", 22, 10);
+    @include adaptiveValue("bottom", 23, 10);
     z-index: 5;
   }
 
   /* .slider-team__name */
   &__name {
-    font-size: rem(24);
+    @include adaptiveValue("font-size", 24, 16);
     color: #fff;
     line-height: math.div(29.76, 24);
   }
@@ -704,8 +687,8 @@
   /* .slider-team__prof */
   &__prof {
     @extend %base-text;
+    @include adaptiveValue("font-size", 16, 14);
     font-weight: 500;
-    font-size: rem(16);
     line-height: math.div(23.53, 16);
     color: #CDCDCD;
   }
@@ -714,27 +697,119 @@
 .slider-arrows {
   position: absolute;
   z-index: 10;
-  left: 15px;
-  bottom: -6px;
-  
-  
-  
-  @media (max-width:$tablet){
+  left: rem(19);
+  bottom: rem(-1);
 
-    bottom: -50px;
+  @media (max-width:$tablet) {
+
+    bottom: rem(-50);
     left: 50%;
-    transform: translate(-50%,0px);
-    
+    transform: translate(-50%, 0px);
   }
 }
 
 .slider-arrow {
 
-  /* .slider-arrow_prev */
-  &_prev {
-    margin: 0px rem(7) 0px 0px;
+  svg {
+    @media (any-hover: hover) {
+      &:hover {
+        stroke: $redColor;
+      }
+    }
   }
 
-  /* .slider-arrow_next */
-  &_next {}
+  /* .slider-arrow_prev */
+  &_prev {
+    margin: 0px rem(14) 0px 0px;
+  }
+}
+
+
+//==========POSTS========================================================================================
+
+.posts {
+
+  /* .posts__container */
+  &__container {}
+
+  /* .posts__body */
+  &__body {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    // grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    @include adaptiveValue("column-gap", 70, 20);
+    row-gap: 30px;
+
+    @media (max-width:$mobile) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  /* .posts__item */
+  &__item {}
+}
+
+.post {
+
+  /* .post__image-ibg */
+  &__image-ibg {
+    display: block;
+    padding-bottom: percent(350, 535);
+    margin: 0px 0px 50px 0px;
+  }
+
+  /* .post__info */
+  &__info {
+    margin: 0px 0px 10px 2px;
+
+    @extend %base-text;
+    font-size: rem(14);
+    font-weight: 700;
+    line-height: math.div(28, 14);
+
+    span {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      margin: 0px 7px 2px 10px;
+
+      background: $redColor;
+      border-radius: 50%;
+    }
+  }
+
+  /* .post__content */
+  &__content {
+    position: relative;
+    padding: 21px 0 0 1px;
+
+    @include adaptiveValue("padding-right", 82, 10);
+
+    &::before {
+      @extend %decore-line;
+      width: 56.075%;
+    }
+  }
+
+
+  /* .post__title */
+  &__title {
+    display: block;
+
+    &:not(:last-child) {
+      margin: 0px 0px 11px 0px;
+    }
+
+    @include adaptiveValue("font-size", 32, 22);
+    // font-size: rem(32);
+    line-height: math.div(39.68, 32);
+  }
+
+  /* .post__text */
+  &__text {
+    @extend %base-text;
+    font-size: rem(16);
+    line-height: math.div(28, 16);
+  }
 }

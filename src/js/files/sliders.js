@@ -62,7 +62,7 @@ function initSliders() {
 			slidesPerView: 2,
 			spaceBetween: 30,
 			loopAdditionalSlides: 5,
-			// autoHeight: false,
+			// autoHeight: true,
 			speed: 800,
 			watchOverflow: true,
 			//touchRatio: 0,
@@ -81,27 +81,7 @@ function initSliders() {
 				nextEl: '.team__container .slider-arrow_prev',
 				prevEl: '.team__container .slider-arrow_next',
 			},
-			/*
-			breakpoints: {
-				320: {
-					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
-				},
-				768: {
-					slidesPerView: 2,
-					spaceBetween: 20,
-				},
-				992: {
-					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
-				},
-			},
-			*/
+			
 			on: {
 
 			}
