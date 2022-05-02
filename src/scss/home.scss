@@ -729,15 +729,11 @@
 
 .posts {
 
-  /* .posts__container */
-  &__container {}
-
   /* .posts__body */
   &__body {
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    // grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
     @include adaptiveValue("column-gap", 70, 20);
     row-gap: 30px;
 
@@ -757,6 +753,8 @@
     display: block;
     padding-bottom: percent(350, 535);
     margin: 0px 0px 50px 0px;
+
+    @media (max-width:$mobile) {}
   }
 
   /* .post__info */
@@ -781,6 +779,7 @@
 
   /* .post__content */
   &__content {
+
     position: relative;
     padding: 21px 0 0 1px;
 
@@ -802,7 +801,6 @@
     }
 
     @include adaptiveValue("font-size", 32, 22);
-    // font-size: rem(32);
     line-height: math.div(39.68, 32);
   }
 
