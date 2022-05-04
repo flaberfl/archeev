@@ -709,6 +709,9 @@
 }
 
 .slider-arrow {
+  @media (max-width:$mobileSmall){
+     display: none; 
+  }
 
   svg {
     @media (any-hover: hover) {
