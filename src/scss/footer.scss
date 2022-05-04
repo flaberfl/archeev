@@ -1,3 +1,27 @@
 //====================================================================================================
 
+.footer {
+
+  /* .footer__container */
+  &__container {
+    padding-top: 40px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+
+    border-top: 1px solid $textColor;
+    @extend %base-text;
+    font-size: rem(16);
+    line-height: math.div(28, 16);
+  }
+
+
+  /* .footer__location */
+  &__location {
+    max-width: 144px;
+  }
+}
+
+
+
 //====================================================================================================
