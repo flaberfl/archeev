@@ -156,3 +156,15 @@
 	clip: rect(0 0 0 0);
 	overflow: hidden;
 }
+
+%animate-right {
+	opacity: 0;
+	transform: translate3d(0, 100px, 0px);
+	transition: all .8s ease-out;
+
+	._watcher-view & {
+		// transition-delay: .3s;
+		opacity: 1;
+		transform: none;
+	}
+}

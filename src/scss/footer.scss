@@ -4,10 +4,12 @@
 
   /* .footer__container */
   &__container {
-    padding-top: 40px;
-    padding-bottom: 50px;
+
+    @include adaptiveValue("padding-top", 40, 20);
+    @include adaptiveValue("padding-bottom", 50, 20);
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     border-top: 1px solid $textColor;
     @extend %base-text;
@@ -15,13 +17,30 @@
     line-height: math.div(28, 16);
   }
 
+  &__logo {
+    @media (max-width:$mobileSmall) {
+      width: 100%;
+      margin: 20px 0px 0px 0px;
+      order: 3;
+
+      text-align: center;
+    }
+  }
+
 
   /* .footer__location */
   &__location {
     max-width: 144px;
   }
-}
 
+  a {
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
 
 
 //====================================================================================================
