@@ -157,9 +157,32 @@
 	overflow: hidden;
 }
 
+%animate-left {
+	opacity: 0;
+	transform: translateX(-100px);
+	transition: all .8s ease-out;
+
+	._watcher-view & {
+		// transition-delay: .3s;
+		opacity: 1;
+		transform: none;
+	}
+}
 %animate-right {
 	opacity: 0;
-	transform: translate3d(0, 100px, 0px);
+	transform: translateX(100px);
+	transition: all .8s ease-out;
+
+	._watcher-view & {
+		// transition-delay: .3s;
+		opacity: 1;
+		transform: none;
+	}
+}
+
+%animate-bottom {
+	opacity: 0;
+	transform: translateY(100px);
 	transition: all .8s ease-out;
 
 	._watcher-view & {
