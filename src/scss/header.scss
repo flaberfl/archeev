@@ -14,7 +14,8 @@
   &._header-scroll {
     position: fixed;
     top: -200%;
-    background-color: rgba(247, 247, 247, .9);
+    background-color: rgba(247, 247, 247, .6);
+    backdrop-filter: blur(rem(4));
   }
 
   &._header-show {

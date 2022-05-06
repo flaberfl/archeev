@@ -1,9 +1,16 @@
 // Подключение функционала "Чертогов Фрилансера"
-import { isMobile, getHash } from "../functions.js";
+import {
+	isMobile,
+	getHash
+} from "../functions.js";
 // Импорт класса наблюдателя.
-import { ScrollWatcher } from "../../libs/watcher.js";
+import {
+	ScrollWatcher
+} from "../../libs/watcher.js";
 // Модуль прокрутки к блоку
-import { gotoBlock } from "./gotoblock.js";
+import {
+	gotoBlock
+} from "./gotoblock.js";
 // Переменная контроля добавления события window scroll.
 let addWindowScrollEvent = false;
 //====================================================================================================================================================================================================================================================================================================
@@ -17,6 +24,47 @@ export function pageNavigation() {
 	// Если подключен scrollWatcher, подсвечиваем текущий пукт меню
 	document.addEventListener("watcherCallback", pageNavigationAction);
 	// Основная функция
+	// function pageNavigationAction(e) {
+	// 	if (e.type === "click") {
+	// 		const targetElement = e.target;
+	// 		if (targetElement.closest('[data-goto]')) {
+	// 			const gotoLink = targetElement.closest('[data-goto]');
+	// 			const gotoLinkSelector = gotoLink.dataset.goto ? gotoLink.dataset.goto : '';
+	// 			const noHeader = gotoLink.hasAttribute('data-goto-header') ? true : false;
+	// 			const gotoSpeed = gotoLink.dataset.gotoSpeed ? gotoLink.dataset.gotoSpeed : 500;
+	// 			const offsetTop = gotoLink.dataset.gotoTop ? parseInt(gotoLink.dataset.gotoTop) : 0;
+	// 			gotoBlock(gotoLinkSelector, noHeader, gotoSpeed, offsetTop);
+	// 			e.preventDefault();
+	// 		}
+	// 	} else if (e.type === "watcherCallback" && e.detail) {
+	// 		const entry = e.detail.entry;
+	// 		const targetElement = entry.target;
+	// 		// Обработка пунктов навигации, если указано значение navigator подсвечиваем текущий пукт меню
+	// 		if (targetElement.dataset.watch === 'navigator') {
+	// 			const navigatorActiveItem = document.querySelector(`[data-goto]._navigator-active`);
+	// 			let navigatorCurrentItem;
+	// 			if (targetElement.id && document.querySelector(`[data-goto="#${targetElement.id}"]`)) {
+	// 				navigatorCurrentItem = document.querySelector(`[data-goto="#${targetElement.id}"]`);
+	// 			} else if (targetElement.classList.length) {
+	// 				for (let index = 0; index < targetElement.classList.length; index++) {
+	// 					const element = targetElement.classList[index];
+	// 					if (document.querySelector(`[data-goto=".${element}"]`)) {
+	// 						navigatorCurrentItem = document.querySelector(`[data-goto=".${element}"]`);
+	// 						break;
+	// 					}
+	// 				}
+	// 			}
+	// 			if (entry.isIntersecting) {
+	// 				// Видим объект
+	// 				// navigatorActiveItem ? navigatorActiveItem.classList.remove('_navigator-active') : null;
+	// 				navigatorCurrentItem ? navigatorCurrentItem.classList.add('_navigator-active') : null;
+	// 			} else {
+	// 				// Не видим объект
+	// 				navigatorCurrentItem ? navigatorCurrentItem.classList.remove('_navigator-active') : null;
+	// 			}
+	// 		}
+	// 	}
+	// }
 	function pageNavigationAction(e) {
 		if (e.type === "click") {
 			const targetElement = e.target;
@@ -38,11 +86,13 @@ export function pageNavigation() {
 					const navigatorActiveItem = document.querySelector(`[data-goto]._navigator-active`);
 					const navigatorCurrentItem = document.querySelector(`[data-goto="${navigatorItem}"]`);
 					if (entry.isIntersecting) {
+						console.log(navigatorActiveItem);
 						// Видим объект
 						// navigatorActiveItem ? navigatorActiveItem.classList.remove('_navigator-active') : null;
 						navigatorCurrentItem ? navigatorCurrentItem.classList.add('_navigator-active') : null;
 					} else {
 						// Не видим объект
+						console.log('navigator-NON-active');
 						navigatorCurrentItem ? navigatorCurrentItem.classList.remove('_navigator-active') : null;
 					}
 				}
@@ -72,7 +122,7 @@ export function pageNavigation() {
 
 	._header-scroll & // На всякий случай можно применять чайлдам
 	*/
-	
+
 export function headerScroll() {
 	addWindowScrollEvent = true;
 	const header = document.querySelector('header.header');
@@ -128,6 +178,7 @@ export function stickyBlock() {
 			});
 		}
 	}
+
 	function stickyBlockItem(stickyParent, stickyConfig) {
 		const stickyBlockItem = stickyParent.querySelector('[data-sticky-item]');
 		const headerHeight = stickyConfig.header;
@@ -160,6 +211,7 @@ export function stickyBlock() {
 			stickyBlockType(stickyBlockItem, stickyItemValues);
 		});
 	}
+
 	function stickyBlockType(stickyBlockItem, stickyItemValues) {
 		stickyBlockItem.style.cssText = `position:${stickyItemValues.position};bottom:${stickyItemValues.bottom};top:${stickyItemValues.top};left:${stickyItemValues.left};width:${stickyItemValues.width};`;
 	}
@@ -174,4 +226,3 @@ setTimeout(() => {
 		});
 	}
 }, 0);
-

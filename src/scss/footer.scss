@@ -20,17 +20,16 @@
   &__logo {
     @media (max-width:$mobileSmall) {
       width: 100%;
-      margin: 20px 0px 0px 0px;
+      margin: rem(20) 0px 0px 0px;
       order: 3;
 
       text-align: center;
     }
   }
 
-
   /* .footer__location */
   &__location {
-    max-width: 144px;
+    max-width: rem(144);
   }
 
   a {
